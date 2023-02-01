@@ -196,6 +196,12 @@ class LoadModelDemo {
     ]);
     this._scene.background = texture;
 
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load("./resources/rocket/glTF/Rocket_Ship_01.gltf", (gltf) => {
+      const root = gltf.scene;
+      this._scene.add(root);
+    });
+
     const plane = new THREE.Mesh(
       new THREE.PlaneGeometry(100, 100, 10, 10),
       new THREE.MeshStandardMaterial({
